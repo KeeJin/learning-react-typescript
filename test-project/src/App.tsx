@@ -1,38 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
 import './App.css';
-
-function MyButton({ title }: { title: string }) {
-  return (
-    <button>{title}</button>
-  );
-}
+import { BrowserRouter as Router, Route, Routes, Link, Outlet } from "react-router-dom";
+// Over here BrowserRouter has been renamed to Router
 
 function App() {
-  const currentDate: Date = new Date();
   return (
-    <>
-      <div className="App">
-        <h1>Hello, React!</h1>
-        <p>Welcome to my portfolio website.</p>
-        <p>Current date and time: {currentDate.toLocaleString()}</p>
-        <MyButton title="Click me" />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    </>
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Outlet /> {/* This is where nested routes will be rendered */}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
   );
 }
 
