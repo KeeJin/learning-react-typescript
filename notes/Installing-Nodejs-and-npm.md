@@ -1,4 +1,4 @@
-# Day 2: Setting Up Node.js and npm
+# Setting Up Node.js and npm
 
 ## Install Node.js and npm (Ubuntu system)
 #### 1. Download the tar.xz file from https://nodejs.org/en
