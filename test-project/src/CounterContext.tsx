@@ -5,7 +5,7 @@ const CounterContext = createContext<{ count: number; increment: () => void; dec
 
 // Create a provider component (this is a functional component)
 export const CounterProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(100);
   
     const increment = () => {
       setCount(count + 2);

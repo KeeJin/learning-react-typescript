@@ -5,7 +5,7 @@ function CounterDisplay() {
     const { count } = useCounter()!;
 
     return (<div>
-        Count: {count}
+        Your money: ${count}
     </div>);
 }
 
@@ -14,8 +14,8 @@ function CounterControls() {
 
     return (
         <div>
-            <button onClick={increment}>Increment</button>
-            <button onClick={decrement}>Decrement</button>
+            <button onClick={increment}>Add</button>
+            <button onClick={decrement}>Remove</button>
         </div>
     );
 }
@@ -23,8 +23,8 @@ function CounterControls() {
 export default function Home() {
     return (
         <div className="App">
-            <h1>Home Page</h1>
-            <p>This is the home page.</p>
+            <h1>Shenzhen Bank Home Page</h1>
+            <p>This is your bank account.</p>
             <CounterProvider>
                 
                     <CounterDisplay />
