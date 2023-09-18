@@ -14,7 +14,7 @@ export default function Contact() {
                     </li>
                 </ul>
             </nav> */}
-            <Outlet />
+            {/* <Outlet /> */}
         </div>
     );
 }

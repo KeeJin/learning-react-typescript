@@ -8,36 +8,42 @@ import { BrowserRouter as Router, Route, Routes, Link, Outlet } from "react-rout
 
 import NestedRoute from "./pages/NestedRoute"
 
+function Navbar() {
+  return (
+    <nav className="bg-blue-500 p-4">
+      <ul className="flex space-x-4 text-white">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li className="group">
+          <Link to="/contact">Contact</Link>
+          <ul className="hidden group-hover:block">
+            <li className="mr-6">
+              <Link to="/contact/nested_route">Nested Route</Link>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
 function App() {
   return (
     <Router>
-      <nav>
-        <ul className="flex">
-          <li className="mr-6 text-blue-500 hover:text-blue-800">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="mr-6 text-blue-500 hover:text-blue-800">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="mr-6">
-            <Link to="/contact">Contact</Link>
-            <ul>
-              <li className="mr-6">
-                <Link to="/contact/nested_route">Nested Route</Link>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
       <Outlet />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />}>
-          <Route path="nested_route" element={<NestedRoute />} />
-        </Route>
-      </Routes>
+      <div className="container mx-auto p-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact/nested_route" element={<NestedRoute />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

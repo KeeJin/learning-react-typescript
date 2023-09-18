@@ -3,7 +3,7 @@ import logo from '../logo.svg';
 
 function MyButton({ title }: { title: string }) {
     return (
-        <button>{title}</button>
+        <button className='btn text-white bg-black ease-out hover:translate-y-1 transition-all rounded'>{title}</button>
     );
 }
 

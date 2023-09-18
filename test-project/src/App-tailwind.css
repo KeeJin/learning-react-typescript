@@ -13,17 +13,13 @@
     pointer-events: none;
 }
 
-/* li {
-    color: black;
-    float: left;
-    padding-left: 100px;
-    list-style-type: none;
+.group:hover .group-hover\:block {
+    display: block !important;
 }
 
-ul {
-    color: black;
-    float: right;
-    background-color: #00ff00;
+/* .btn{
+    margin-left:10px;
+    margin-right:10px;
 } */
 
 @media (prefers-reduced-motion: no-preference) {

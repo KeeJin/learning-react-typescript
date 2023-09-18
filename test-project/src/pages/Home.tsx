@@ -13,9 +13,9 @@ function CounterControls() {
     const { increment, decrement } = useCounter()!;
 
     return (
-        <div>
-            <button onClick={increment}>Add</button>
-            <button onClick={decrement}>Remove</button>
+        <div className='space-x-5'>
+            <button className="btn" onClick={increment}>Add</button>
+            <button className="btn" onClick={decrement}>Remove</button>
         </div>
     );
 }
