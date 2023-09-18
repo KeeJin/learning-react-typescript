@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import './App.css';
+import './App-tailwind.css';
 import { BrowserRouter as Router, Route, Routes, Link, Outlet } from "react-router-dom";
 // Over here BrowserRouter has been renamed to Router
 
