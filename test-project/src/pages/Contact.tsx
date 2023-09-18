@@ -7,17 +7,14 @@ export default function Contact() {
         <div>
             <h1>Contact Page</h1>
             <p>This is the contact page.</p>
-            <nav>
+            {/* <nav>
                 <ul>
                     <li>
                         <Link to="nested_route">Nested Route</Link>
                     </li>
                 </ul>
-            </nav>
-            <Outlet /> {/* Render nested routes here */}
-            <Routes>
-                <Route path="nested_route" element={<NestedRoute />} />
-            </Routes>
+            </nav> */}
+            <Outlet />
         </div>
     );
 }
