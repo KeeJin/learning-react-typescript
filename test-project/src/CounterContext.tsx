@@ -8,10 +8,12 @@ export const CounterProvider: React.FC<{ children: ReactNode }> = ({ children })
     const [count, setCount] = useState(100);
   
     const increment = () => {
+      console.log('incrementing by 2.');
       setCount(count + 2);
     };
   
     const decrement = () => {
+      console.log('decrementing by 1.');
       setCount(count - 1);
     };
   

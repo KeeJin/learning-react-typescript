@@ -10,17 +10,17 @@ import NestedRoute from "./pages/NestedRoute"
 
 function Navbar() {
   return (
-    <nav className="bg-blue-500 p-4">
-      <ul className="flex space-x-4 text-white">
+    <nav className="bg-blue-500 px-8 py-2 font-semibold">
+      <ul className="flex space-x-6 text-white px-4">
         <li>
           <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
         </li>
-        <li className="group">
+        <li className="relative group">
           <Link to="/contact">Contact</Link>
-          <ul className="hidden group-hover:block">
+          <ul className="absolute py-2 px-1 hidden group-hover:block group-hover:bg-blue-500 min-w-[100%]">
             <li className="mr-6">
               <Link to="/contact/nested_route">Nested Route</Link>
             </li>
