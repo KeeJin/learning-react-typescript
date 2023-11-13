@@ -17,8 +17,11 @@ const CounterContext = createContext<CounterContextInterface>({
   decrement: () => {},
 });
 
+// Create a custom hook to access the context
+export const useCounter = () => useContext(CounterContext);
+
 // Create a provider component (this is a functional component)
-export const CounterProvider: React.FC<CounterProviderProps> = ({
+const CounterProvider: React.FC<CounterProviderProps> = ({
   children,
 }) => {
   const [count, setCount] = useState<number>(100);
@@ -40,5 +43,4 @@ export const CounterProvider: React.FC<CounterProviderProps> = ({
   );
 };
 
-// Create a custom hook to access the context
-export const useCounter = () => useContext(CounterContext);
+export default CounterProvider;

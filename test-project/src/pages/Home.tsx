@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useCounter, CounterProvider } from "../CounterContext";
+import CounterProvider, { useCounter } from "../CounterContext";
 import AxisVisualizer from "../AxisVisualizer";
 
-function CounterDisplay() {
+const CounterDisplay = () => {
   const { count } = useCounter();
 
   return <p className="mt-5 text-s">Your balance: ${count}</p>;
 }
 
-function CounterControls() {
+const CounterControls = () => {
   const { increment, decrement } = useCounter()!;
 
   return (
@@ -142,7 +142,7 @@ const GamepadComponent: React.FC = () => {
   );
 };
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="App">
       <h1 className="font-bold text-4xl">St. Peters Bank Home Page</h1>
@@ -157,3 +157,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

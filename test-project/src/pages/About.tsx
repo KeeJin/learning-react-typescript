@@ -10,7 +10,7 @@ import axios from "axios";
 //   );
 // }
 
-function DisplayRainfallReading() {
+const DisplayRainfallReading = () => {
   const [rainfall, setRainfall] = React.useState<number | null>(null);
 
   const getCurrentRainfallReading = async () => {
@@ -64,9 +64,9 @@ function DisplayRainfallReading() {
       {rainfall !== null ? <p>{rainfall} mm</p> : <p>Loading...</p>}
     </div>
   );
-}
+};
 
-function DisplayCurrentDateTime() {
+const DisplayCurrentDateTime = () => {
   const [currentDateTime, setCurrentDateTime] = React.useState<string | null>(
     null
   );
@@ -97,9 +97,9 @@ function DisplayCurrentDateTime() {
       <p>{currentDateTime}</p>
     </div>
   );
-}
+};
 
-export default function About() {
+const About = () => {
   return (
     <div className="App">
       <h1 className="text-lg font-extrabold">Hello, React!</h1>
@@ -125,4 +125,6 @@ export default function About() {
       </header>
     </div>
   );
-}
+};
+
+export default About;

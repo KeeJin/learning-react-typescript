@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function NestedRoute() {
+const NestedRoute = () => {
   return (
     <div>
       <h1>Nested Route Page</h1>
@@ -8,3 +8,5 @@ export default function NestedRoute() {
     </div>
   );
 }
+
+export default NestedRoute;
