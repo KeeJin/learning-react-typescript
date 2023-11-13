@@ -1,38 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import './App-tailwind.css';
+import { BrowserRouter as Router, Route, Routes, Link, Outlet } from "react-router-dom";
+// Over here BrowserRouter has been renamed to Router
 
-function MyButton({ title }: { title: string }) {
+import NestedRoute from "./pages/NestedRoute"
+
+function Navbar() {
   return (
-    <button>{title}</button>
+    <nav className="bg-blue-500 px-8 py-2 font-semibold">
+      <ul className="flex space-x-6 text-white px-4">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li className="relative group">
+          <Link to="/contact">Contact</Link>
+          <ul className="absolute py-2 px-1 hidden group-hover:block group-hover:bg-blue-500 min-w-[100%]">
+            <li className="mr-6">
+              <Link to="/contact/nested_route">Nested Route</Link>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
 function App() {
-  const currentDate: Date = new Date();
   return (
-    <>
-      <div className="App">
-        <h1>Hello, React!</h1>
-        <p>Welcome to my portfolio website.</p>
-        <p>Current date and time: {currentDate.toLocaleString()}</p>
-        <MyButton title="Click me" />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+    <Router>
+      <Navbar />
+      <Outlet />
+      <div className="container mx-auto p-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact/nested_route" element={<NestedRoute />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 

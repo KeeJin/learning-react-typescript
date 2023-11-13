@@ -41,3 +41,8 @@ Here's a more detailed explanation:
    You can programmatically navigate between routes in response to user actions or events. This allows you to create dynamic and interactive user interfaces. For instance, clicking a button can navigate the user to a different route within the application.
 
 Overall, routing is a crucial part of web development, especially in SPAs. It allows you to create multi-page experiences within a single HTML page, providing a seamless and interactive user experience. Libraries like React Router make it easier to implement client-side routing in React applications.
+
+## To use React Router: 
+```
+npm install react-router-dom
+```

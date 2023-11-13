@@ -1,0 +1,15 @@
+.axis-visualizer {
+    width: 100px;
+    height: 20px;
+    border: 1px solid #333;
+    position: relative;
+    margin: 10px;
+  }
+  
+  .bar {
+    background-color: #4caf50;
+    height: 100%;
+    width: 0;
+    transition: width 0.1s ease-in-out; /* Add a smooth transition effect */
+  }
+  
