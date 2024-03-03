@@ -14,7 +14,7 @@ import {
 
 import NestedRoute from "./pages/NestedRoute";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <nav className="bg-blue-500 px-8 py-2 font-semibold">
       <ul className="flex space-x-6 text-white px-4">
@@ -37,7 +37,7 @@ const Navbar = () => {
   );
 }
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <Router>
       <Navbar />

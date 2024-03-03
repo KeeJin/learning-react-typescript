@@ -1,14 +1,6 @@
 import React, { useEffect } from "react";
-import logo from "../logo.svg";
 import axios from "axios";
-
-// function MyButton({ title }: { title: string }) {
-//   return (
-//     <button className="btn text-white bg-black ease-out hover:translate-y-1 transition-all rounded">
-//       {title}
-//     </button>
-//   );
-// }
+import VideoViewport from "../components/VideoViewport"
 
 const DisplayRainfallReading = () => {
   const [rainfall, setRainfall] = React.useState<number | null>(null);
@@ -99,30 +91,17 @@ const DisplayCurrentDateTime = () => {
   );
 };
 
-const About = () => {
+const About: React.FC = () => {
   return (
-    <div className="App">
-      <h1 className="text-lg font-extrabold">Hello, React!</h1>
-      <p className="text-gray-400 text-s font-mono">Welcome to my test site.</p>
-      <DisplayCurrentDateTime />
+    <div>
+      <div className="App">
+        <h1 className="text-lg font-extrabold">Hello, React!</h1>
+        <p className="text-gray-400 text-s font-mono">Welcome to my test site.</p>
+        <DisplayCurrentDateTime />
 
-      <DisplayRainfallReading />
-      {/* <MyButton title="Click me" /> */}
-
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <DisplayRainfallReading />
+      </div>
+      <VideoViewport src="/video.mp4" />
     </div>
   );
 };
